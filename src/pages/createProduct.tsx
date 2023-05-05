@@ -1,36 +1,35 @@
-import React from "react";
-import { View, Text, Image, TextInput, StyleSheet, Touchable, TouchableOpacity } from "react-native";
+import React from "react"
+import { TextInput, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-
-export function Profile() {
+export function CreateProduct() {
     return (
         <View style={{flex: 1, backgroundColor: 'white', alignItems: 'center'}}>
-            
-            <Image source={require('../../assets/debascrack.jpg')}
-                style={{display: 'flex', height: 200, width: 300, alignItems: 'center', justifyContent: 'center', padding: 5, margin: 15, borderRadius: 12 }}
-            />
-
+            <Text>Cadastre seu Produto</Text>
             <View style={{flex: 1, rowGap: 10, margin: 10, alignItems: "center"}}>
                 <TextInput style={styles.div}
                     placeholder="Nome"
                 />
                 <TextInput style={styles.div}
-                    placeholder="E-mail"
+                    placeholder="Marca"
                 />
                 <TextInput style={styles.div}
-                    placeholder="Senha"
+                    placeholder="Preço"
                     secureTextEntry={true}
                 />
                 <TextInput style={styles.div}
-                    placeholder="Data de Aniversário"
+                    placeholder="Categoria"
                 />
                 <TextInput style={styles.div}
-                    placeholder="Telefone"
+                    placeholder="Preço"
                     keyboardType="number-pad"
                 />
 
+    <TextInput style={styles.div2}
+                    placeholder="Descrição..."
+                />
+
                 <TouchableOpacity style={styles.botao}>
-                    <Text>Salvar</Text>
+                    <Text>Cadastrar Produto</Text>
                 </TouchableOpacity>
             </View>
 
@@ -50,6 +49,18 @@ const styles = StyleSheet.create({
         width: 300,
         height: 35,
     },
+
+    div2: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 5,
+        borderRadius: 12,
+        backgroundColor: '#D3D3D3',
+        textAlign: 'center',
+        width: 300,
+        height: 75,
+    },
     
     botao: {
         display: 'flex',
@@ -62,5 +73,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         width: 200,
         height: 40,
+        textDecorationColor: ''
     }
 });

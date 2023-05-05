@@ -9,7 +9,7 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
-export function Login() {
+export function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -36,13 +36,20 @@ export function Login() {
           onChangeText={(password) => setPassword(password)}
         /> 
       </View> 
-      <TouchableOpacity>
+      <TouchableOpacity
+       onPress={() => navigation.navigate('Recuperar Senha')}
+      >
         <Text style={styles.forgot_button}>Esqueceu a Senha?</Text> 
       </TouchableOpacity> 
       <TouchableOpacity style={styles.loginBtn}
-        
+        onPress={() => navigation.navigate('Menu')}
       >
         <Text>LOGIN</Text> 
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.loginBtn}
+        onPress={() => navigation.navigate('Signup')}
+      >
+        <Text>CADASTRAR</Text> 
       </TouchableOpacity> 
     </View> 
   );

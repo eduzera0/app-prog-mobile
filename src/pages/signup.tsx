@@ -1,16 +1,14 @@
-import React from "react";
-import { View, Text, Image, TextInput, StyleSheet, Touchable, TouchableOpacity } from "react-native";
+import React from 'react';
+import { View, TextInput, TouchableOpacity, StyleSheet, Text } from 'react-native';
 
-
-export function Profile() {
+export function SignUp({navigation}) {
     return (
         <View style={{flex: 1, backgroundColor: 'white', alignItems: 'center'}}>
-            
-            <Image source={require('../../assets/debascrack.jpg')}
-                style={{display: 'flex', height: 200, width: 300, alignItems: 'center', justifyContent: 'center', padding: 5, margin: 15, borderRadius: 12 }}
-            />
 
             <View style={{flex: 1, rowGap: 10, margin: 10, alignItems: "center"}}>
+
+                <Text>Complete com suas Informações!</Text>
+
                 <TextInput style={styles.div}
                     placeholder="Nome"
                 />
@@ -21,6 +19,12 @@ export function Profile() {
                     placeholder="Senha"
                     secureTextEntry={true}
                 />
+
+                <TextInput style={styles.div}
+                    placeholder="Confirmar Senha"
+                    secureTextEntry={true}
+                />
+
                 <TextInput style={styles.div}
                     placeholder="Data de Aniversário"
                 />
@@ -29,11 +33,12 @@ export function Profile() {
                     keyboardType="number-pad"
                 />
 
-                <TouchableOpacity style={styles.botao}>
-                    <Text>Salvar</Text>
+                <TouchableOpacity style={styles.botao}
+                    onPress={() => navigation.navigate('Menu')}
+                >
+                    <Text>Cadastrar</Text>
                 </TouchableOpacity>
             </View>
-
         </View>
     )
 }
@@ -62,5 +67,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         width: 200,
         height: 40,
+        textDecorationColor: ''
     }
 });
